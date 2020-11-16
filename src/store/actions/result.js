@@ -7,8 +7,11 @@ export const saveResult = ( res ) => {
     };
 }
 export const storeResult = (res) => {
-    return (dispatch) => {
+    return (dispatch, getState) => {
         setTimeout(() => {
+            // const oldCounter = getState().ctr.counter;
+            // console.log('oldCounter', oldCounter);
+            //don't write logic in action, logic is written in reducer
             dispatch(saveResult(res))
         }, 2000)
     }
